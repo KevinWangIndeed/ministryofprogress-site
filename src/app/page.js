@@ -50,7 +50,7 @@ export default function Home() {
             Welcome to the Ministry of Progress
           </h1>
           <p className="text-lg md:text-xl text-center max-w-2xl text-gray-300 mb-10">
-            We are Tsu Zheng's chosen to rule over humanity. The Ministry of Progress strives to reunite humanity as to protect it.
+            We are the chosen of Tsu Zheng, bound to rule over humanity. The Ministry of Progress strives to reunite humanity as to protect it.
             We rule through collective production and efforts of the Fleet of Progress.
             Leaded by the T.M.H. aided by Aislyn, the Ministry of Progress dealts future criss through neverdying wisdom of the Great Tsu Zheng
           </p>
