@@ -39,13 +39,14 @@ export default function HomePage() {
         <div className="space-y-6">
           <div className="bg-gray-800 p-4 rounded shadow">
             <h2 className="text-lg font-semibold mb-2 text-cyan-300">伟大的许征</h2>
-            <div className="w-full h-64 relative rounded overflow-hidden">
-               <img
-                src="/portrait of Tsu Zheng.jpg"
-                alt="伟大的许征画像"
-                className="object-cover w-full h-full"
-                />
-            </div>
+            <div className="w-full max-w-md mx-auto">
+              <img
+              src="/portrait of Tsu Zheng.jpg"
+              alt="伟大的许征画像"
+              className="w-full h-auto rounded shadow"
+              />
+</div>
+            
           </div>
 
           <div className="bg-gray-800 p-4 rounded shadow">
