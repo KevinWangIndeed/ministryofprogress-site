@@ -39,22 +39,26 @@ export default function HomePage() {
         <div className="space-y-6">
           <div className="bg-gray-800 p-4 rounded shadow">
             <h2 className="text-lg font-semibold mb-2 text-cyan-300">伟大的许征</h2>
-            <div className="w-full h-64 bg-gray-600 flex items-center justify-center text-gray-300">
-              许征画像占位
+            <div className="w-full h-64 relative rounded overflow-hidden">
+               <img
+                src="/portrait of Tsu Zheng.jpg"
+                alt="伟大的许征画像"
+                className="object-cover w-full h-full"
+                />
             </div>
           </div>
 
           <div className="bg-gray-800 p-4 rounded shadow">
             <h3 className="text-md font-semibold text-cyan-200 mb-2">每周一思</h3>
             <p className="text-gray-300">
-              “集体之光，胜于孤星之辉。” ——许征
+              “自甘平庸是邪恶的借口。” ——许征
             </p>
           </div>
 
           <div className="bg-gray-800 p-4 rounded shadow">
             <h3 className="text-lg font-bold text-cyan-300 mb-2">第七纪同盟会公报</h3>
             <p className="text-gray-300">
-              最新战报更新中……请持续关注来自联盟前线的数据同步。
+              实现幸福的简单易行的办法
             </p>
           </div>
         </div>
@@ -68,7 +72,13 @@ export default function HomePage() {
           <div className="bg-gray-800 p-4 rounded shadow">
             <h3 className="text-lg font-bold text-purple-300 mb-2">舰队公报</h3>
             <p className="text-gray-300">
-              进步舰队第九远征军已抵达阿瓦隆星域，初步建立前哨站。
+              第十二生产建设舰队在昌平星区决胜，进步事务所专访舰队之望林海伦
+            </p>
+            <p className="text-gray-300">
+              进步事务所一致同意授予伯弗卡先生许征精银荣光勋章
+            </p>
+            <p className="text-gray-300">
+              正典变动？信仰之城许征主义研究会的最新计划解析
             </p>
           </div>
         </div>
