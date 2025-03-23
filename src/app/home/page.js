@@ -28,6 +28,7 @@ export default function HomePage() {
         <h1 className="text-5xl md:text-6xl font-bold text-cyan-400 mb-6">进步事务所</h1>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-cyan-300">
           <a href="/rules" className="hover:text-white underline">第七纪同盟会游戏规则</a>
+          <a href="#" className="hover:text-white underline">购买第七纪同盟会模型</a>
           <a href="#" className="hover:text-white underline">加入同盟会</a>
           <a href="#" className="hover:text-white underline">我的聚会点</a>
         </div>
