@@ -31,6 +31,9 @@ export default function HomePage() {
           <a href="#" className="hover:text-white underline">购买第七纪同盟会模型</a>
           <a href="#" className="hover:text-white underline">加入同盟会</a>
           <a href="#" className="hover:text-white underline">我的聚会点</a>
+          <Link href="https://chat.ministry-of-progress.com" target="_blank">
+           <Button>进入许征主义者聊天室</Button>
+          </Link>
         </div>
       </div>
 
