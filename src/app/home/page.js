@@ -34,8 +34,11 @@ export default function HomePage() {
           <a href="#" className="hover:text-white underline">加入同盟会</a>
           <a href="#" className="hover:text-white underline">我的聚会点</a>
           <Link href="https://chat.ministry-of-progress.com" target="_blank">
-           <Button>进入许征主义者聊天室</Button>
-          </Link>
+            <button style={{ padding: '8px 16px', backgroundColor: '#000', color: '#fff', borderRadius: '8px' }}>
+              进入许征主义者聊天室
+            </button>
+           </Link>
+           
         </div>
       </div>
 
