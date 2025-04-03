@@ -27,7 +27,7 @@ export default function HomePage() {
       setMessages((prev) => [...prev, { sender: 'xiaoLin', text: data.reply }]);
     } catch (err) {
       console.error('Error calling API:', err);
-      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: '小琳暂时连不上星炬之光，请稍后再试吧～' }]);
+      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: '小琳暂时没有连接上～' }]);
     }
   };
 
