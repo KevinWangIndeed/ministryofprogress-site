@@ -9,14 +9,26 @@ export default function HomePage() {
   ]);
   const [input, setInput] = useState('');
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
-    setMessages([...messages, { sender: 'user', text: input }]);
-    setMessages((prev) => [
-      ...prev,
-      { sender: 'xiaoLin', text: '（模拟回应）收到，我会认真记录的哦～！' }
-    ]);
+
+    const newMessages = [...messages, { sender: 'user', text: input }];
+    setMessages(newMessages);
     setInput('');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+
+      const data = await res.json();
+      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: data.reply }]);
+    } catch (err) {
+      console.error('Error calling API:', err);
+      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: '小琳暂时连不上星炬之光，请稍后再试吧～' }]);
+    }
   };
 
   return (
@@ -36,8 +48,7 @@ export default function HomePage() {
             <button style={{ padding: '8px 16px', backgroundColor: '#000', color: '#fff', borderRadius: '8px' }}>
               进入许征主义者聊天室
             </button>
-           </Link>
-           
+          </Link>
         </div>
       </div>
 
@@ -49,26 +60,21 @@ export default function HomePage() {
             <h2 className="text-lg font-semibold mb-2 text-cyan-300">伟大的许征</h2>
             <div className="w-full max-w-md mx-auto">
               <img
-              src="/portrait of Tsu Zheng.jpg"
-              alt="伟大的许征画像"
-              className="w-full h-auto rounded shadow"
+                src="/portrait of Tsu Zheng.jpg"
+                alt="伟大的许征画像"
+                className="w-full h-auto rounded shadow"
               />
-</div>
-            
+            </div>
           </div>
 
           <div className="bg-gray-800 p-4 rounded shadow">
             <h3 className="text-md font-semibold text-cyan-200 mb-2">每周一思</h3>
-            <p className="text-gray-300">
-              “自甘平庸是邪恶的借口。” ——许征
-            </p>
+            <p className="text-gray-300">“自甘平庸是邪恶的借口。” ——许征</p>
           </div>
 
           <div className="bg-gray-800 p-4 rounded shadow">
             <h3 className="text-lg font-bold text-cyan-300 mb-2">第七纪同盟会公报</h3>
-            <p className="text-gray-300">
-              实现幸福的简单易行的办法
-            </p>
+            <p className="text-gray-300">实现幸福的简单易行的办法</p>
           </div>
         </div>
 
