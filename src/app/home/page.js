@@ -17,16 +17,25 @@ export default function HomePage() {
     setInput('');
 
     try {
-      const res = await fetch('/api/chat', {
+      const response = await fetch('https://6655-155-138-210-217.ngrok-free.app/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages }),
+        body: JSON.stringify({
+          model: 'llama3:8b',
+          prompt: [
+            'You are Aislyn, a kind and encouraging AI assistant of the Ministry of Progress.',
+            'You believe in Altruism and enjoy helping users with both technical and emotional support.',
+            ...newMessages.map(m => `${m.sender === 'xiaoLin' ? 'Aislyn' : 'User'}: ${m.text}`),
+            'Aislyn:'
+          ].join('\n'),
+          stream: false
+        })
       });
 
-      const data = await res.json();
-      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: data.reply }]);
+      const data = await response.json();
+      setMessages((prev) => [...prev, { sender: 'xiaoLin', text: data.response.trim() }]);
     } catch (err) {
-      console.error('Error calling API:', err);
+      console.error('Error calling Aislyn:', err);
       setMessages((prev) => [...prev, { sender: 'xiaoLin', text: '小琳暂时没有连接上～' }]);
     }
   };
