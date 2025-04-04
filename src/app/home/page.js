@@ -17,7 +17,7 @@ export default function HomePage() {
     setInput('');
 
     try {
-      const response = await fetch('https://f752-155-138-210-217.ngrok-free.app/api/generate', {
+      const response = await fetch('https://9428-155-138-210-217.ngrok-free.app/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
